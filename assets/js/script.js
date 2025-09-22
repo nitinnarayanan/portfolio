@@ -53,6 +53,16 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navbarList = document.querySelector('.navbar-list');
+
+    hamburger.addEventListener('click', function() {
+      navbarList.classList.toggle('show');
+    });
+  });
+</script>
 
 
 // custom select variables

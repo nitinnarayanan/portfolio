@@ -163,16 +163,28 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Trail</button>
+            <button class="navbar-link" data-nav-link="emptypage1">EmptyPage1</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>One More</button>
+            <button class="navbar-link" data-nav-link="emptypage2">EmptyPage2</button>
           </li>
 
         </ul>
 
       </nav>
+
+      <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navbarList = document.querySelector('.navbar-list');
+
+    hamburger.addEventListener('click', function() {
+      navbarList.classList.toggle('show');
+    });
+  });
+</script>
+
 
 
 
@@ -384,7 +396,7 @@
     <h3 class="h3">Professional Experience</h3>
   </div>
 
-  <ol class="timeline-list">
+  <ul class="timeline-list">
 
     <!-- Mphasis Full Stack Developer -->
     <li class="timeline-item">
@@ -460,6 +472,7 @@
         <li>Collaborated with multiple departments to organize successful dining and community programs.</li>
       </ul>
     </li>
+  </ol>
 </section>
 
         <header>
@@ -648,7 +661,7 @@
         <a href=".\assets\images\exp-edu\workshop.jpeg" target="_blank">View file</a>
       </p>
     </li>
-  </ol>
+        </ol>
 </div>
 
 </section>
@@ -901,6 +914,21 @@ function copyEmail() {
 </ul>
 
 </article>
+
+
+<article class="emptypage1" data-page="emptypage1">
+  <header>
+      <h2 class="h2 article-title">Inkem anloke ikkada</h2>
+  </header>
+</article>
+
+<article class="emptypage2" data-page="emptypage2">
+  <header>
+      <h2 class="h2 article-title">Ikkada kuda</h2>
+  </header>
+</article>
+
+
 </div> <!-- Closing any unclosed div before main -->
 
 </main> <!-- Closing the <main> tag -->
