@@ -386,16 +386,30 @@ main {
   position: absolute;
   top: -15px;
   right: -15px;
+  padding: 10px 15px;
   border-radius: 0 15px;
   font-size: 13px;
   color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
-  padding: 10px;
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
   z-index: 1;
 }
 
+/* Hide by default */
+.info_more-btn {
+  display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .info_more-btn {
+    display: block;
+  }
+}
+
+
+/* Background overlay */
 .info_more-btn::before {
   content: "";
   position: absolute;
@@ -406,13 +420,27 @@ main {
   z-index: -1;
 }
 
+/* Hover/focus state */
 .info_more-btn:hover,
-.info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
-
+.info_more-btn:focus {
+  background: var(--bg-gradient-yellow-1);
+}
 .info_more-btn:hover::before,
-.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+.info_more-btn:focus::before {
+  background: var(--bg-gradient-yellow-2);
+}
 
-.info_more-btn span { display: none; }
+/* Label text */
+.info_more-btn span {
+  display: block;
+  font-size: var(--fs-8);
+}
+
+/* Hide icon if using ion-icons */
+.info_more-btn ion-icon {
+  display: none;
+}
+
 
 .sidebar-info_more {
   opacity: 0;
@@ -1737,18 +1765,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .info-content .title { padding: 5px 18px; }
 
-  .info_more-btn {
-    top: -30px;
-    right: -30px;
-    padding: 10px 15px;
-  }
 
-  .info_more-btn span {
-    display: block;
-    font-size: var(--fs-8);
-  }
-
-  .info_more-btn ion-icon { display: none; }
 
   .separator { margin: 32px 0; }
 
@@ -2252,7 +2269,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .info-content .title { margin: auto; }
 
-  .info_more-btn { display: none; }
+
 
   .sidebar-info_more {
     opacity: 1;
@@ -2318,7 +2335,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 /* Fix timeline bullets and bold skills */
 .timeline-text {
-  list-style: none; /* remove default bullets */
+  list-style: disc; /* remove default bullets */
+  text-align: justify;
   margin-left: 20px;
   padding-left: 0;
 }
